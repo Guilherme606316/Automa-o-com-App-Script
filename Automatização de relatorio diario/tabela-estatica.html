@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Porto</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 24px;
+        background: #f7f7f7;
+        color: #222;
+      }
+      .container {
+        border: 2px solid #2a3b55;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      .header {
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 0;
+      }
+      
+      .company-name {
+        font-size: 1.8em;
+        color: #2a3b55;
+        font-weight: bold;
+      }
+      h2 {
+        color: #2a3b55;
+        margin: 10px 0;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+      }
+      .date-info {
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 0;
+      }
+      .data-table {
+        border-collapse: collapse;
+        width: 100%;
+        background: #fff;
+      }
+      .data-table th, .data-table td {
+        border: 1px solid #444;
+        padding: 10px 14px;
+        text-align: left;
+      }
+      .data-table th {
+        background: #e7e7e7;
+        color: #2a3b55;
+      }
+      .data-table td {
+        vertical-align: top;
+        min-width: 120px;
+      }
+      .data-table tr:nth-child(even) td {
+        background: #f4f9ff;
+      }
+      .empty-cell {
+        color: #bbb;
+        text-align: center;
+      }
+      .footer {
+        padding: 15px;
+        text-align: center;
+        font-size: 0.95em;
+        color: #555;
+        border-top: 1px solid #ddd;
+      }
+      @media (max-width: 700px) {
+        body {
+          margin: 4px;
+        }
+        .container {
+          box-shadow: none;
+        }
+        .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+          display: block;
+        }
+        .data-table th {
+          position: sticky;
+          top: 0;
+        }
+        .data-table tr {
+          margin-bottom: 16px;
+        }
+        .data-table td, .data-table th {
+          min-width: unset;
+          width: 100%;
+          box-sizing: border-box;
+        }
+        .data-table td:before {
+          content: attr(data-label);
+          font-weight: bold;
+          display: block;
+          margin-bottom: 5px;
+          color: #2a3b55;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="container" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td>
+          <div class="header">
+            <span class="company-name">Nome da empresa</span>
+          </div>
+          
+          <h2>RELATORIO DIARIO</h2>
+          
+          <div class="date-info">
+            <b>Data:</b> <?= dataBR ?> (<?= diaSemana ?>)
+          </div>
+          
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Equipe</th>
+                <? for (var i = 0; i < tipos.length; i++) { ?>
+                  <th><?= tipos[i] ?></th>
+                <? } ?>
+              </tr>
+            </thead>
+            <tbody>
+              <? for (var i = 0; i < equipes.length; i++) { ?>
+                <tr>
+                  <td><b><?= equipes[i] ?></b></td>
+                  <? for (var j = 0; j < tipos.length; j++) { 
+                    var descricoes = mapa[equipes[i]][tipos[j]];
+                  ?>
+                    <td>
+                      <? if (descricoes && descricoes.length) { ?>
+                        <? for (var k = 0; k < descricoes.length; k++) { ?>
+                          • <?= descricoes[k] ?><br>
+                        <? } ?>
+                      <? } else { ?>
+                        <span class="empty-cell">–</span>
+                      <? } ?>
+                    </td>
+                  <? } ?>
+                </tr>
+              <? } ?>
+            </tbody>
+          </table>
+          
+          <div class="footer">
+            <img src="LINK_DA_LOGO" alt="Logo" style="height:30px;"><br>
+            <span style="font-weight:bold;">Nome da Empresa</span><br>
+            <span>Telefone: (00) 00000-0000</span><br>
+            <span>E-mail: contato@empresa.com</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
