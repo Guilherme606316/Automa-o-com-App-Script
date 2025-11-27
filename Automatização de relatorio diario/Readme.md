@@ -98,14 +98,15 @@ Para editar o visual do e-mail, crie e abra o arquivo `Tabela..html`.
 ### 7. Copiar o código JavaScript (.gs)
 Copie o conteúdo do arquivo JavaScript disponível neste repositório e cole em `Código.gs`:
 
-👉 [Ver código JavaScript (.gs)](https://github.com/usuario/repositorio/blob/main/Codigo.gs)
+👉 [Ver código JavaScript (.gs)]([https://github.com/usuario/repositorio/blob/main/Codigo.gs](https://github.com/Guilherme606316/Automa-o-com-App-Script/blob/main/Automatiza%C3%A7%C3%A3o%20de%20relatorio%20diario/tabela-interativa.js
+))
 
 ---
 
 ### 8. Copiar o código HTML
 Copie o conteúdo do arquivo HTML disponível neste repositório e cole em `Email.html`:
 
-👉 [Ver código HTML](https://github.com/usuario/repositorio/blob/main/Email.html)
+👉 [Ver código HTML]([https://github.com/usuario/repositorio/blob/main/Email.html](https://github.com/Guilherme606316/Automa-o-com-App-Script/blob/main/Automatiza%C3%A7%C3%A3o%20de%20relatorio%20diario/tabela-estatica.html))
 
 ---
 
